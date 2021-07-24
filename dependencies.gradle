@@ -1,4 +1,43 @@
 ext {
 
-    kotlinVersion = '1.4.31'
+    kotlinVersion = '1.5.20'
+
+    appcompatVersion = '1.3.0'
+    materialVersion = '1.4.0'
+    constraintLayoutVersion = '2.0.4'
+    androidxCoreKtxVersion = '1.6.0'
+    exoplayerVersion = '2.14.1'
+    daggerVersion = '2.37'
+    coroutinesVersion = '1.5.1'
+
+    retrofitVersion = '2.9.0'
+
+    // Test
+    junitVersion = '4.13.2'
+    androidxJunitVersion = '1.1.2'
+    espressoVersion = '3.3.0'
+
+    appDependencies = [
+            kotlin          : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+            appCompat       : "androidx.appcompat:appcompat:$appcompatVersion",
+            material        : "com.google.android.material:material:$materialVersion",
+            constraintLayout: "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion",
+            androidxCoreKtx : "androidx.core:core-ktx:$androidxCoreKtxVersion",
+            exoplayerCore   : "com.google.android.exoplayer:exoplayer-ui:$exoplayerVersion",
+            exoplayerUi     : "com.google.android.exoplayer:exoplayer-core:$exoplayerVersion",
+            dagger          : "com.google.dagger:dagger:$daggerVersion",
+            daggerCompiler  : "com.google.dagger:dagger-compiler:$daggerVersion",
+            coroutines      : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion",
+    ]
+
+    dataDependencies = [
+            retrofit2    : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            gsonConverter: "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    ]
+
+    testDependencies = [
+            junit        : "junit:junit:$junitVersion",
+            androidxJunit: "androidx.test.ext:junit:$androidxJunitVersion",
+            espressoCore : "androidx.test.espresso:espresso-core:$espressoVersion"
+    ]
 }

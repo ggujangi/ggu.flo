@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -33,13 +34,28 @@ android {
 }
 
 dependencies {
+    implementation appDependencies.kotlin
+    implementation appDependencies.appCompat
+    implementation appDependencies.material
+    implementation appDependencies.constraintLayout
+    implementation appDependencies.androidxCoreKtx
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    implementation 'androidx.core:core-ktx:1.6.0'
-    implementation 'androidx.appcompat:appcompat:1.3.0'
-    implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // ExoPlayer
+    implementation appDependencies.exoplayerCore
+    implementation appDependencies.exoplayerUi
+
+    // Dagger2
+    implementation appDependencies.dagger
+    kapt appDependencies.daggerCompiler
+
+    // Coroutines
+    implementation appDependencies.coroutines
+
+    // Retrofit
+    implementation dataDependencies.retrofit2
+    implementation dataDependencies.gsonConverter
+
+    testImplementation testDependencies.junit
+    androidTestImplementation testDependencies.androidxJunit
+    androidTestImplementation testDependencies.espressoCore
 }
